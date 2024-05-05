@@ -1,0 +1,231 @@
+<!--Un shortcut que proporciona las cabeceras de nuestro código es ! + tab. MUY ÚTIL-->
+<!--RECORDAR QUE LAS ETIQUETAS HTML NO DEFINEN EL DISEÑO. UTILIZAREMOS EL CSS PARA ELLO-->
+<!DOCTYPE html>
+<html lang="es-ES"> <!--El atributo lang permite especificar el idioma de tu página-->
+    <head> <!-- Identificador de las cabeceras. NO ES VISIBLE-->
+        <meta charset = "utf-8"> <!-- Es la tabla de caractéres del espacio occidental. Reconoce tildes y carácteres propios del abecedario occidental-->
+        <title> Portfolio Alejandro García </title>
+        <!--Muy útil usar Google fonts para encontrar, descargar y linkear la fuente específica que queremos. Lo mejor es elegir la fuente y extraer el link-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <!--Utilizamos la etiqueta script heredada de javascript para introducir iconos para las redes solciales-->
+        <script src="https://kit.fontawesome.com/15362b1f41.js" crossorigin="anonymous"></script>
+        <!--Utilizamos una referencia externa (link) para generar el estilo de nuestra web a través de un archivo CSS-->
+        <link rel="stylesheet" href="./css/styles.css">
+    </head>
+    <body> <!--Parte VISIBLE. Muy importante incluir cualquier contenido dentro de una etiqueta ya que posteriormente no lo podremos utilizar-->
+        <!--Menú de navegación-->
+        <nav>
+            <ul>
+                <li><a href="#sobremi">SOBRE MÍ</a></li> <!--A través de la etiqueta <a> colocamos el enlace interno a los diferentes apartados de nuestra página-->
+                <li><a href="#portfolio">PORTFOLIO</a></li> <!--Dentro de la etiqueta <a> la opción de text-decoration esta activada en underline. Podemos descativarlo si queremos-->
+                <li id="logo"><img src="./images/helmet.png" alt="logo_portfolio"></li>
+                <li><a href="#experiencia">EXPERIENCIA</a></li>
+                <li><a href="#contacto">CONTACTO</a></li>
+            </ul>
+        </nav>
+        <article>
+            <!--Bloque de Inicio-->
+            <!-- Podemos haver la division utilizando un <div>, que se trata de un elemento de división GENÉRICO que divide los CONTENT DIVISION (contenedores en bloque). Tenemos que rellenarlos de contenido
+                Sin embargo, vamos a utilizar las etiquetas propias del HTML semántico-->
+            <section id="inicio"> <!-- Se trata de un elemento de división GENÉRICO que divide los CONTENT DIVISION (contenedores en bloque). Tenemos que rellenarlos de contenido-->
+                <h2 class="name">Alejandro García</h2> <!-- Evitar saltos innecesarios de headings. Usar solo un <h1> por página, por ello es buena practica reservar el h1 y no usarlo al inicio-->
+                <h3 class="hashtag"># civil engineer</h3>
+                <h3 class="hashtag"># data scientist</h3>
+                <!--Utilizamos <ul> para representar una lista no ordenada de items. Nos sirve para ordenar los iconos de redes sociales-->
+                <ul id="socialmedia">
+                    <li><a href="https://open.spotify.com/user/alejandro_carcel?si=d033dacebbd94540" target="_blank"><i class="fa-brands fa-spotify"></i></a></li>
+                    <!--Incluimos los iconos y usamos la etiqueta <a> para disponer la url a nuestro perfil
+                    Usamos target="blank" para que abra una pestaña nueva en nuestronavegador
+                    El problema es que nos modifica el estilo de nuestros iconos, para solucionarlo utilizaremos las pseudo-classes
+                    Pseudo_classes: actúa sobre un selector cuando se produzca un determinado estado-->
+                    <li><a href="https://www.instagram.com/alejandro__garci/#" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/alejandro-garcía-cárcel-07416b205/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/Garcialejan" target="_blank"><i class="fa-brands fa-github"></i></a></li> 
+                    <!--Float puede ser una función que nos permita apilar de manera muy rapida un conjunto de elementos a la izqd o derecha. Puede generar problemas a veces
+                    Permite romper el flujo de bloques realizado con el ul y apilarlos hacia la derecha. El flujo normal del nav es de izq a 
+                    dercha y de arriba a abajo de los bloques-->
+                </ul>
+            </section>
+            <!--FIN Bloque de inicio-->
+            <!--Bloque de sobre mí-->
+            <section id="sobremi">
+                <!--Un elemento tipo línea no va a ocupar todo el padre/bloque de contenido. Se trata de cambios de una parte del contenido, por ejemplo strong, cite, span...-->
+                <!--Span es una herramienta muy útil para el maquetado posterior con CSS. Es una herramienta que se utiliza para el marcado de parte del contenido-->
+                <!--class, src, alt... son atributos que pueden contener etiquetas. src se utiliza para definir el path de la imagen y alt se utiliza para la accesibilidad (discpacidades visuales)-->
+                <div id="imgsobremi"><img src="./images/Foto_personal_250.png" alt="Foto_Alejandro_Garcia" height="250"></div> <!--Utilizar solo height o width, los dos a la vez no porque se distorsiona la imagen-->
+                <div id="bodysobremi">
+                    <h2>Sobre mí</h2>
+                    <p>Soy <strong>Alejandro García</strong>, Ingeniero de Caminos, Canales y Puertos apasionado por la <span>tecnología y la programación</span>. Mi interés por la informática me ha llevado 
+                        a explorar el mundo de la programación, donde disfruto creando soluciones innovadoras y resolviendo problemas utilizando el poder del código. Me encanta combinar mi formación en ingeniería 
+                        con mis habilidades de programación para desarrollar proyectos que impacten positivamente en mi entorno y en la sociedad en general. Siempre estoy buscando oportunidades para aprender y 
+                        crecer en el mundo de la tecnología y la programación. Me defino como una persona creativa y entusiasta de los nuevos retos, donde mi máxima es <cite>"el mundo es un aula maravillosa de 
+                        aprendizaje continuo".</cite></p>
+                    <!--Hay que introducir un nuevo <p> si queremos realizar un cambio de línea-->
+                    <div class="masinfo"><button type="button">MAS INFO</button></div>
+                </div>
+            </section>
+            <!--FIN bloque de sobre mí-->
+            <!--Bloque de portfolio-->
+            <section id="portfolio">
+                <h2>Portfolio</h2>
+                <h3>Una mirada más allá del texto</h3>
+                <!-- <table>  Para mostrar información. Actualmente los tables no son tan utilizados, ya veremos con CSS otras formas de crear tables que son mucho más flexibles.
+                    <thead> Indica lo que va a contener la cabecera de nuestra tabla
+                        <tr>
+                            <th colspan="4">Ejemplos de portfolio</th> Colspan para comprimir nuestro título en una sola fila. Se indica el número de columnas de nuestra tabla
+                        </tr>
+                    </thead>
+                    <tbody> Cuerpo de nuestra tabla. tr = table row (filas) y td = table column (columnas)
+                        <tr>
+                            <td>tecnología</td>
+                            <td>ciencia de datos</td>
+                            <td>diseños</td>
+                            <td>web</td>
+                        </tr>
+                        <tr>
+                            <td>cine</td>
+                            <td>series</td>
+                            <td>libros</td>
+                            <td>videojuegos</td>
+                        </tr>
+                    </tbody>
+                </table>-->
+                <div class="filaportfolio">
+                    <div class="card"> <!--Creamos las cards para insertar nuestros portfolios y le daremos estilo con el flex en el CSS-->
+                        <video controls width="350"> <!--Permitimos los controles sobre el vídeo y añadimos como ancho el ancho de nuestras cards-->
+                            <source src="./media/intro_mastermindv2.webm" type="video/webm"> <!--Usamos la app de handbrake para codificar nuestros vídeos para redimensionarlos-->
+                            <source src="./media/intro_mastermindv2.mp4" type="video/mp4"> <!--Etiqueta source para incluir los videos y usamos el src al igual que con las imágenes-->
+                        </video>
+                        <h3>musica</h3>
+                        <h4>concierto benicassim</h4>
+                        <div class="sep"></div>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                        <div class="masinfo"><button type="button">MAS INFO</button></div>
+                    </div>
+                    <!--El siguente código nos sirve por si queremos incluir un vídeo de youtube dentro de nuestro portfolio
+                    El iframe podemos copiarlo directamente desde youtube. Se obtiene compartiendo el vídeo como embebido-->
+                    <div class="card">
+                        <iframe width="350" src="https://www.youtube.com/embed/cGvXAAw3Ikk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                        <h3>musica</h3>
+                        <h4>concierto benicassim</h4>
+                        <div class="sep"></div>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                        <div class="masinfo"><button type="button">MAS INFO</button></div>
+                    </div>
+                    <div class="card">
+                        <img src="./images/imagen_portfolio.png" alt="Portfolio 3">
+                        <h3>musica</h3>
+                        <h4>concierto benicassim</h4>
+                        <div class="sep"></div>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                        <div class="masinfo"><button type="button">MAS INFO</button></div>
+                    </div>
+                    <div class="card">
+                        <img src="./images/imagen_portfolio.png" alt="Portfolio 4">
+                        <h3>musica</h3>
+                        <h4>concierto benicassim</h4>
+                        <div class="sep"></div>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                        <div class="masinfo"><button type="button">MAS INFO</button></div>
+                    </div>
+                </div>
+            </div>
+            </section>
+            <!--FIN bloque de portfolio-->
+            <!--Bloque de Experiencia-->
+            <section id="experiencia">
+                <h2>Experiencia & Skills</h2>
+                <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h3>
+                <div class="gridexp">
+                    <div class="cardexp">
+                        <h2>Diseño web</h2>
+                        <h3 class="textoizquierda">2018-2020</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <ul>
+                            <li><img src="./images/tecno_au.png" alt="" height="30px"></li>
+                            <li><img src="./images/tecno_cu.png" alt="" height="30px"></li>
+                            <li><img src="./images/tecno_html.png" alt="" height="30px"></li>
+                        </ul>
+                    </div>
+                    <div class="cardexp">
+                        <h2>Diseño web</h2>
+                        <h3 class="textoizquierda">2018-2020</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <ul>
+                            <li><img src="./images/tecno_au.png" alt="" height="30px"></li>
+                            <li><img src="./images/tecno_cu.png" alt="" height="30px"></li>
+                            <li><img src="./images/tecno_html.png" alt="" height="30px"></li>
+                        </ul>
+                    </div>
+                    <div class="cardexp">
+                        <h2>Diseño web</h2>
+                        <h3 class="textoizquierda">2018-2020</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <ul>
+                            <li><img src="./images/tecno_au.png" alt="" height="30px"></li>
+                            <li><img src="./images/tecno_cu.png" alt="" height="30px"></li>
+                            <li><img src="./images/tecno_html.png" alt="" height="30px"></li>
+                        </ul>
+                    </div>
+                    <div class="cardexp">
+                        <h2>Diseño web</h2>
+                        <h3 class="textoizquierda">2018-2020</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <ul>
+                            <li><img src="./images/tecno_au.png" alt="" height="30px"></li>
+                            <li><img src="./images/tecno_cu.png" alt="" height="30px"></li>
+                            <li><img src="./images/tecno_html.png" alt="" height="30px"></li>
+                        </ul>
+                    </div>
+                    <div class="cardexp">
+                        <h2>Diseño web</h2>
+                        <h3 class="textoizquierda">2018-2020</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <ul>
+                            <li><img src="./images/tecno_au.png" alt="" height="30px"></li>
+                            <li><img src="./images/tecno_cu.png" alt="" height="30px"></li>
+                            <li><img src="./images/tecno_html.png" alt="" height="30px"></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!--Fin bloque de Experiencia-->
+            <!--INICIO bloque de contacto-->
+            <section id="contacto"> <!--Utilizaremos la etiqueta <input> para generar los formulario de contacto de nuestra página web-->
+                <h2>Contacto</h2>
+                <h3>Enviame tus dudas o inquietudes</h3>
+                <form action="#"> <!--Elemento padre para definir el formularioen nuestro html. Action sería el fichero de enganche al que enlazaríamos cuando quieren contactar con nosotros-->
+                    <div class="itemform">  <!--Habitualmente los formularios trabajan con js para recoger la información-->
+                        <label for="nombre">Nombre</label> <!--Es la etiqueta que aparece delante de nuestro input. Podría usarse tmb un span, pero con el label estamos usando html semántico-->
+                        <input type="text" id="nombre" name="nombre" minlength="2" maxlength="64" required> <!--Definimos un tamaño máx y min de carcatéres posibles. Required indica que ese campo no se ha rellenado CORRECTAMENTE-->
+                    </div>
+                    <div class="itemform">  
+                        <label for="empresa">Empresa</label> 
+                        <input type="text" id="empresa" name="empresa" minlength="2" maxlength="128"> <!--En este caso no exigimos que se rellene el campo y por ello no usamos el required-->
+                    </div>
+                    <div class="itemform">  
+                        <label for="email">Email</label> 
+                        <input type="text" id="email" name="email" minlength="12" maxlength="128" required> <!--Usamos el type="email" ya que HTML5 lo incluye para comprobar el formato y comproibar que está la arroba-->
+                    </div>
+                    <div class="itemform">  
+                        <label for="mensaje">Mensaje</label>
+                        <textarea name="mensaje" id="mensaje" cols="33" rows="5" style="resize: vertical; max-height: 200px;"></textarea> <!--Con cols y rows podemos modificar el ancho que necesitamos de nuestro mensaje-->
+                    </div>
+                    <div class="itemform">
+                        <input type="submit" name="enviar" value="CONTACTAR"> <!--Podemos usar el input para generar el botón de enviar el formulario-->
+                    </div>
+                </form>
+                <!--Fin bloque de Contacto-->
+            </section>
+        </article>
+        <!--INICIO pie de de página de nuestra página web-->
+        <footer>
+            <ul>
+                <li class="logo"><a href="#inicio"><img src="./images/helmet.png" alt=""></a></li>
+                <li>Si le surge cualquier duda, puede consultarla directamente conmigo a través del formulario anterior</li>
+            </ul>
+        </footer>
+    </body>
+</html>
